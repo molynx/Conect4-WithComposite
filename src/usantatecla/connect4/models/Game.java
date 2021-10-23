@@ -1,9 +1,8 @@
 package usantatecla.connect4.models;
 
 import usantatecla.connect4.types.Color;
-import usantatecla.utils.models.ConcreteCoordinate;
-import usantatecla.utils.models.Coordinate;
 import usantatecla.connect4.types.Error;
+import usantatecla.utils.models.Coordinate;
 
 public class Game {
 
@@ -44,25 +43,6 @@ public class Game {
         return this.turn.getPutTokenError(column);
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (obj == null)
-            return false;
-        if (getClass() != obj.getClass())
-            return false;
-        Game other = (Game) obj;
-        if (board == null) {
-            if (other.board != null)
-                return false;
-        } else if (!board.equals(other.board))
-            return false;
-        if (turn == null) {
-            return other.turn == null;
-        } else return turn.equals(other.turn);
-    }
-
 	public Memento createMemento() {
 		return new Memento(this.board, this.turn);
 	}
@@ -76,9 +56,4 @@ public class Game {
 		}
 		
 	}
-
-	public boolean areAllTokensOnBoard() {
-		return this.turn.areAllTokensOnBoard();
-	}
-
 }

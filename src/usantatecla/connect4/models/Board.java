@@ -1,8 +1,10 @@
 package usantatecla.connect4.models;
 
+import java.util.Arrays;
+
 import usantatecla.connect4.types.Color;
 import usantatecla.utils.models.ConcreteCoordinate;
-import usantatecla.connect4.types.Coordinate;
+import usantatecla.utils.models.Coordinate;
 import usantatecla.utils.models.Direction;
 
 public class Board {
@@ -24,9 +26,19 @@ public class Board {
             }
         }
     }
+    
+    Color[][] copy(){
+    	return Arrays.stream(this.colors).map(Color[]::clone).toArray(Color[][]::new);
+    }
 
     void putToken(int column, Color color) {
-        ConcreteCoordinate coordinate =  this.getEmptyCoordinate(column);
+        ConcreteCoordinate coordinate =  this.getEmptyCoordinate(column - 1);
+        this.colors[coordinate.getRow()][coordinate.getColumn()] = color;
+    }
+    
+    void putToken(Coordinate coordinate, Color color) {
+        assert !coordinate.isNull();
+
         this.colors[coordinate.getRow()][coordinate.getColumn()] = color;
     }
 
@@ -57,7 +69,7 @@ public class Board {
     }
 
     Color getColor(Coordinate coordinate) {
-        return this.colors[coordinate.getRow()][coordinate.getColumn()];
+    	return this.colors[coordinate.getRow()][coordinate.getColumn()];
     }
 
     boolean isOccupied(ConcreteCoordinate coordinate, Color color) {

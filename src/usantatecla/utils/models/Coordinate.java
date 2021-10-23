@@ -6,4 +6,6 @@ public interface Coordinate {
   boolean isNull();
   Coordinate[] getInDirectionCoordinates(Direction direction, int amount);
   Coordinate getInDirectionCoordinate(Direction direction);
+  int getRow();
+  int getColumn();
 }

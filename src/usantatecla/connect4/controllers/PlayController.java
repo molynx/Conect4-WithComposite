@@ -1,9 +1,6 @@
 package usantatecla.connect4.controllers;
 
-import usantatecla.connect4.controllers.ControllersVisitor;
-import usantatecla.connect4.models.Game;
 import usantatecla.connect4.models.Session;
-import usantatecla.connect4.models.State;
 import usantatecla.connect4.types.Color;
 import usantatecla.connect4.types.Error;
 

@@ -1,10 +1,7 @@
 package usantatecla.connect4.controllers;
 
-import usantatecla.connect4.models.Game;
 import usantatecla.connect4.models.Session;
-import usantatecla.connect4.models.State;
 import usantatecla.connect4.types.Color;
-import usantatecla.utils.models.ConcreteCoordinate;
 import usantatecla.utils.models.Coordinate;
 
 public abstract class Controller {

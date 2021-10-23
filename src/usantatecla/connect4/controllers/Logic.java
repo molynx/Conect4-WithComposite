@@ -1,11 +1,9 @@
 package usantatecla.connect4.controllers;
 
-import java.util.HashMap;
+import java.util.EnumMap;
 import java.util.Map;
 
-import usantatecla.connect4.models.Game;
 import usantatecla.connect4.models.Session;
-import usantatecla.connect4.models.State;
 import usantatecla.connect4.models.StateValue;
 
 public class Logic {
@@ -15,7 +13,7 @@ public class Logic {
 
     public Logic() {
         this.session = new Session();
-        this.controllers = new HashMap<>();
+        this.controllers = new EnumMap<>(StateValue.class);
         this.controllers.put(StateValue.INITIAL, new StartController(this.session));
         this.controllers.put(StateValue.IN_GAME, new PlayController(this.session));
         this.controllers.put(StateValue.RESUME, new ResumeController(this.session));
@@ -25,5 +23,4 @@ public class Logic {
     public AcceptorController getController() {
         return this.controllers.get(this.session.getValueState());
     }
-
 }

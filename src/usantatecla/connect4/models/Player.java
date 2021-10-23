@@ -2,7 +2,6 @@ package usantatecla.connect4.models;
 
 import usantatecla.connect4.types.Color;
 import usantatecla.connect4.types.Error;
-import usantatecla.utils.models.Coordinate;
 
 class Player {
 
@@ -38,8 +37,8 @@ class Player {
 	public void set(int playerPutTokens) {
 		this.putTokens = playerPutTokens;
 	}
-    
-	boolean areAllTokensOnBoard() {
-        return this.putTokens == Coordinate.DIMENSION;
-    }
+//    
+//	boolean areAllTokensOnBoard() {
+//        return this.putTokens == Coordinate.DIMENSION;
+//    }
 }

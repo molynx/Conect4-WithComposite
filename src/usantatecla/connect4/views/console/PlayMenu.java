@@ -1,6 +1,5 @@
 package usantatecla.connect4.views.console;
 
-import usantatecla.connect4.controllers.ActionController;
 import usantatecla.connect4.controllers.PlayController;
 import usantatecla.utils.views.Menu;
 

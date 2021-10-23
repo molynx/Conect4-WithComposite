@@ -1,9 +1,9 @@
 package usantatecla.utils.views;
 
+import java.util.ArrayList;
+
 import usantatecla.utils.models.ClosedInterval;
 import usantatecla.utils.models.Command;
-
-import java.util.ArrayList;
 
 public abstract class Menu {
 
@@ -12,11 +12,11 @@ public abstract class Menu {
 	private ArrayList<Command> commandList;
 
 	public Menu() {
-		this.commandList = new ArrayList<Command>();
+		this.commandList = new ArrayList<>();
 	}
 
 	public void execute() {
-		ArrayList<Command> commands = new ArrayList<Command>();
+		ArrayList<Command> commands = new ArrayList<>();
 		for (int i = 0; i < this.commandList.size(); i++) {
 			if (this.commandList.get(i).isActive()) {
 				commands.add(this.commandList.get(i));

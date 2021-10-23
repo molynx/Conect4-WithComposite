@@ -44,5 +44,14 @@ class NullCoordinate implements Coordinate {
     public Coordinate getInDirectionCoordinate(Direction direction) {
         return null;
     }
-    
+
+	@Override
+	public int getRow() {
+		return 0;
+	}
+
+	@Override
+	public int getColumn() {
+		return 0;
+	}
 }

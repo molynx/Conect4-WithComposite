@@ -1,2 +1,0 @@
-module Conect4WithComposite {
-}

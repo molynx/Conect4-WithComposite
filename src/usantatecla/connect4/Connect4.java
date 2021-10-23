@@ -1,7 +1,6 @@
 package usantatecla.connect4;
 
 import usantatecla.connect4.controllers.AcceptorController;
-import usantatecla.connect4.controllers.Controller;
 import usantatecla.connect4.controllers.Logic;
 import usantatecla.connect4.views.View;
 
@@ -23,7 +22,7 @@ abstract class Connect4 {
             controller = logic.getController();
             if (controller != null)
                 controller.accept(this.view);
-        } while (controller != null);
+        } 
+        while (controller != null);
     }
-
 }

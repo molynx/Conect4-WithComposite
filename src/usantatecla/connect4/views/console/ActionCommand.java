@@ -4,7 +4,6 @@ import usantatecla.connect4.controllers.PlayController;
 import usantatecla.connect4.views.Message;
 
 public class ActionCommand extends Command{
-
 	
 	protected ActionCommand(PlayController playController) {
 		super(Message.ACTION_COMMAND.toString(), playController);
@@ -14,8 +13,7 @@ public class ActionCommand extends Command{
 	public void execute() {
 		new PlayerView(this.playController).interact();
 	    this.playController.next();
-			super.execute();
-		
+		super.execute();
 	}
 
 	@Override

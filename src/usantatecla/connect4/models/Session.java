@@ -55,9 +55,9 @@ public class Session {
 		return this.game.getColor(coordinate);
 	}
 	
-	public boolean areAllTokensOnBoard() {
-		return this.game.areAllTokensOnBoard();
-	}
+//	public boolean areAllTokensOnBoard() {
+//		return this.game.areAllTokensOnBoard();
+//	}
 	
 	public boolean isConect4() {
 		return this.game.isConnect4();

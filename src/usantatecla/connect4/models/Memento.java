@@ -1,24 +1,23 @@
 package usantatecla.connect4.models;
 
 import usantatecla.connect4.types.Color;
-import usantatecla.utils.models.Coordinate;
+import usantatecla.utils.models.ConcreteCoordinate;
 
 public class Memento {
 
 	private int activePlayer;
-    private char[] boardColors;
+	private Color[][] colors;
 
     Memento(Board board, Turn turn) {
-        this.boardColors = board.toCharacterArray();
+    	this.colors = board.copy();
         this.activePlayer = turn.getActiveColor().ordinal();
     }
 
     Board getBoard() {
         Board board = new Board();
-        int colorsCount = 0;
-        for (int i = 0; i < Coordinate.DIMENSION; i++) {
-            for (int j = 0; j < Coordinate.DIMENSION; j++) {
-                board.putToken(new Coordinate(i, j), Color.get(this.boardColors[colorsCount++]));
+        for (int i = 0; i < Board.ROWS; i++) {
+            for (int j = 0; j < Board.COLUMNS; j++) {
+            	 board.putToken(new ConcreteCoordinate(i, j), colors[i][j]);
             }
         }
         return board;
@@ -30,9 +29,11 @@ public class Memento {
 
     int getPlayerPutTokens(Color color) {
         int playerPutTokens = 0;
-        for (int i = 0; i < this.boardColors.length; i++) {
-            if (Color.get(this.boardColors[i]) == color) {
-                playerPutTokens++;
+        for (int i = 0; i < Board.ROWS; i++) {
+            for (int j = 0; j < Board.COLUMNS; j++) {
+                if (this.colors[i][j] == color) {
+                    playerPutTokens++;
+                }
             }
         }
         return playerPutTokens;
