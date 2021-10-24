@@ -18,4 +18,8 @@ public class ResumeController extends Controller implements AcceptorController{
         controllersVisitor.visit(this);
     }
 
+	@Override
+	public boolean isNull() {
+		return false;
+	}
 }

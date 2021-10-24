@@ -20,9 +20,8 @@ abstract class Connect4 {
         AcceptorController controller;
         do {
             controller = logic.getController();
-            if (controller != null)
-                controller.accept(this.view);
+            controller.accept(this.view);
         } 
-        while (controller != null);
+        while (!controller.isNull());
     }
 }

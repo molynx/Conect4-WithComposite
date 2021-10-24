@@ -57,4 +57,9 @@ public class PlayController extends Controller implements AcceptorController{
 	public void redo() {
 		this.redoController.redo();
 	}
+
+	@Override
+	public boolean isNull() {
+		return false;
+	}
 }
